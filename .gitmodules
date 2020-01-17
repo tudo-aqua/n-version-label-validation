@@ -1,0 +1,4 @@
+[submodule "semseg"]
+	path = semseg
+	url = https://github.com/hszhao/semseg
+	branch = master
