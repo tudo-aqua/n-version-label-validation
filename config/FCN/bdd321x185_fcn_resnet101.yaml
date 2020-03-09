@@ -1,7 +1,7 @@
 DATA:
-  data_root: /data/bdd/bdd100k_dataset_321x185
-  train_list: /data/bdd/bdd100k_dataset_321x185/train_prefixed.txt
-  val_list: /data/bdd/bdd100k_dataset_321x185/val_prefixed.txt
+  data_root: data/bdd/bdd100k_dataset_321x185
+  train_list: data/bdd/bdd100k_dataset_321x185/train_prefixed.txt
+  val_list: data/bdd/bdd100k_dataset_321x185/val_prefixed.txt
   classes: 3
 
 TRAIN:
@@ -14,10 +14,10 @@ TRAIN:
   rotate_max: 10  # maximum random rotate
   ignore_label: 255
   aux_weight: 0.4
-  workers: 4  # data loader workers
+  workers: 6  # data loader workers
   batch_size: 16  # batch size for training
   base_lr: 0.001
   epochs: 100
   momentum: 0.9
-  output_dir: /data/bdd/bdd100k_dataset_321x185/output/predictions/fcn_resnet101_preprocessed
+  output_dir: data/bdd/bdd100k_dataset_321x185/output/predictions/fcn_resnet101_preprocessed
   architecture: fcn

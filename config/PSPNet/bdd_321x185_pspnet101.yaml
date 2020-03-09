@@ -1,7 +1,7 @@
 DATA:
-  data_root: /data/bdd/bdd100k_dataset_321x185
-  train_list: /data/bdd/bdd100k_dataset_321x185/train_prefixed.txt
-  val_list: /data/bdd/bdd100k_dataset_321x185/val_prefixed.txt
+  data_root: ../data/bdd/bdd100k_dataset_321x185
+  train_list: ../data/bdd/bdd100k_dataset_321x185/train_prefixed.txt
+  val_list: ../data/bdd/bdd100k_dataset_321x185/val_prefixed.txt
   classes: 3
 
 TRAIN:
@@ -46,7 +46,7 @@ Distributed:
   loss_scale:
 
 TEST:
-  test_list: /data/bdd/bdd100k_dataset_321x185/val_prefixed.txt
+  test_list: ../data/bdd/bdd100k_dataset_321x185/val_prefixed.txt
   split: val  # split in [train, val and test]
   base_size: 321  # based size for scaling
   test_h: 185

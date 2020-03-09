@@ -3,6 +3,7 @@ VAL_DIR=$2
 CONFIG_FILE=$3
 ARCH=$4
 THREADS=$5
+N_CLASSES=$6
 
 echo "Starting evaluation run with config"
 echo "MODEL_DIR $MODEL_DIR"
