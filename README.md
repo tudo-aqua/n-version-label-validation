@@ -6,6 +6,15 @@ This project uses an N-version approach to validate the label quality in the BDD
 
 Install the requirements in from ```requirements/requirements.txt``` using pip or conda.
 
+## Downloading the semseg submodule
+
+This project uses the [semseg project](https://github.com/hszhao/semseg/) as a submodule. 
+It is not downloaded automatically, so we will do this manually.
+```
+git submodule init
+git submodule update
+```
+
 ## Dataset setup
 
 #### Download the dataset at https://bdd-data.berkeley.edu/
@@ -39,7 +48,12 @@ python3 train.py --config config/FCN/bdd321x185_fcn_resnet101.yaml
 python3 train.py --config config/Deeplab/bdd321x185_deeplabv3_resnet101.yaml
 ```
 For the PSPNet, the standard setting is to only keep the last two checkpoints. Disable this by commenting out lines
-247-249 in semseg/tool/train.py, so all checkpoints are kept. Then train the PSPNet in the following way.
+247-249 in semseg/tool/train.py, so all checkpoints are kept. Semseg looks for its config file within its own directory, 
+so move the config file to the respective semseg directory.
+```
+mv config/PSPNet/bdd_321x185 semseg/config/bdd_321x185
+```
+Then train the PSPNet in the following way.
 ```
 cd semseg
 ./tool/train.sh bdd321x185 pspnet101
