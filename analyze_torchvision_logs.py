@@ -33,14 +33,14 @@ parser.add_argument('val_results_root',
                     help='Root directory containing all checkpoint evaluations')
 parser.add_argument('--output_file',
                     help='If set, this will contain the mIoU for each epoch.')
-parser.add_argument('--epochs', type=int,
+parser.add_argument('--epochs', type=int, default=100,
                     help='Number of epochs used in training of the model')
 args = parser.parse_args()
 
 mIOU = []
 
 for i in list(range(0, args.epochs, 5)) + [args.epochs - 1]:
-    iou_df_i_path = path_join(args.val_results_root, f'/ep{i}/iou.csv')
+    iou_df_i_path = path_join(args.val_results_root, f'ep{i}/iou.csv')
     iou_df_i = pd.read_csv(iou_df_i_path)
     mIOU_i = iou_df_i.drop(['truth_path', 'pred_path'], axis=1).mean(
         axis=0, skipna=True)
