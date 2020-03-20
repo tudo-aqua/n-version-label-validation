@@ -82,7 +82,7 @@ in the next step.
 
 ## Majority vote predictions
 Enter the model checkpoints that were found to have the best IOU in the previous step at the respective 
- points in `majority_vote.sh`. 
+ points in `majority_vote.sh` and update the number of parallel threads to run at the top of the file.
 Then run the script to execute the majority vote and sorting. This will produce images containing the 
 majority vote results, number of votes for the majority class, strength of disagreement with the ground truth, 
 and a visualization meant for manual inspection. Afterwards, these visualization images will be sorted into the 
